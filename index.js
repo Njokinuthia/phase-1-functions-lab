@@ -35,5 +35,27 @@ function distanceTravelledInFeet(block1,block2){
     return (block2-block1) * 264
   } 
 }
-
 console.log(distanceTravelledInFeet(43,48))
+
+// Fare prices 
+function calculatesFarePrice(start,destination){
+  let distance = distanceTravelledInFeet(start,destination)
+  let chargableDistance = distance - 400;
+  if (distance <= 400){
+    return 0;
+  } 
+  else if (distance > 400 && distance <= 2000){
+    return chargableDistance * 0.02 ;   
+  }
+  else if (distance > 2000 && distance <=2500){
+    return 25;    
+  }
+  else if(distance > 2500){
+    return "cannot travel that far" ;     
+  }
+  else{
+    return "insert start and final blocks"
+  }  
+}
+
+console.log(calculatesFarePrice(34,32));
